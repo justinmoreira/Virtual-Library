@@ -1,25 +1,32 @@
+body{
+    background-image: url('images/background-image.jpeg');
+}
+
 .title{
     font-size: 36px;
     font-weight: bold;
     text-align: center;
+    color: white;
 }
 .header{
     font-size: 24px;
     text-align: center;
     padding: 40px;
+    color: white;
 }
 
 
 
 
-.left{
+/*.left{
     width: 95%;
     height: 600px;
     background-color: black;
     border-radius: 30px;
     padding: 10px;
     margin:20px;
-}
+}*/
+
 form{
     display: grid;
     grid-template-rows: repeat(4, 30px) 1fr;
@@ -30,6 +37,7 @@ form{
     background-color: blanchedalmond;
     border-radius: 30px;
     padding: 30px 5px;
+    margin: 20px;
 }
 .add-book{
     border: none;
