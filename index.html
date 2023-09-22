@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="function.js">
+    <script src = "function.js" defer></script>
     <title>Virtual Library</title>
 </head>
 <body>
     <div class="title">Virtual Library</div>
     <div class="header">Welcome! To begin, fill out the form with all necessary information and click submit to add that book! Feel free to edit or delete past entries. Enjoy!</div>
-    <div class="left">
-        <form action="" method="get">
+    <div class="left" id = "left">
+        <form id = "form">
             <div class="q1">
                 <label for="book-name">Name of book:</label>
                 <input type="text" id = "book-name">
@@ -28,15 +28,15 @@
                 <label for="been-read">Have you finished reading the book?</label>
                 <input type="checkbox" id="been-read">
             </div>
-            <button type="submit" class = "add-book">Add To Library</button>
+            <button type = "submit" class = "add-book">Add To Library</button>
         </form>       
     </div>
     <div class="right">
         <div class="sample-book">
-            <div class="input-title">asd</div>
-            <div class="input-author">asd</div>
-            <div class="input-pages">asd</div>
-            <div class="input-read">asd</div>
+            <div id="input-title"></div>
+            <div id="input-author"></div>
+            <div id="input-pages"></div>
+            <div id="input-read"></div>
             <button class="delete-input">Delete</button>
         </div>
     </div>
