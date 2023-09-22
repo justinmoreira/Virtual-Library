@@ -1,4 +1,5 @@
 const myLibrary = [];
+let currentIndex = 0;
 
 function Book (name, author, pages, read) {
     this.name = name;
@@ -18,16 +19,49 @@ function addBookToLibrary() {
     
     myLibrary.push(book);
 
-    displayBooks();
+    displayNewBook();
 }
 
-function displayBooks(){
-    for(let i = 0; i < myLibrary.length; i++){
-        document.getElementById('input-title').textContent = myLibrary[i].name;
-        document.getElementById('input-author').textContent = myLibrary[i].author;
-        document.getElementById('input-pages').textContent = myLibrary[i].pages;
-        document.getElementById('input-read').textContent = myLibrary[i].read;
-    }
+function displayNewBook(){
+
+    let grid = document.querySelector('.grid');
+
+    let card = document.createElement('div');
+    card.className = 'card';
+    grid.appendChild(card);
+
+    let cardName = document.createElement('div');
+    cardName.textContent = myLibrary[currentIndex].name;
+    card.appendChild(cardName);
+
+    let cardAuthor = document.createElement('div');
+    cardAuthor.textContent = myLibrary[currentIndex].author;
+    card.appendChild(cardAuthor);
+
+    let cardPages = document.createElement('div');
+    cardPages.textContent = myLibrary[currentIndex].pages;
+    card.appendChild(cardPages);
+
+    let cardRead = document.createElement('div');
+    cardRead.textContent = myLibrary[currentIndex].read;
+    card.appendChild(cardRead);
+
+    let deleteButton = document.createElement('button');
+    deleteButton.className = 'delete-input';
+    deleteButton.textContent = 'Delete';
+    card.appendChild(deleteButton);
+    
+    currentIndex++;
+}
+
+function createNewCard(name, author, pages, read){
+    
+
+    
+
+    
+
+    
 }
 
 function logSubmit(event){
