@@ -13,8 +13,13 @@ function addBookToLibrary() {
     let name = document.getElementById('book-name').value;
     let author = document.getElementById('author').value;
     let pages = document.getElementById('book-pages').value;
-    let read = document.getElementById('been-read').value;
-
+    let read = '';
+    if(document.getElementById('been-read').checked){
+        read = "Been read";
+    } else { 
+        read = "Not been read"; 
+    }
+    
     const book = new Book(name, author, pages, read);
     
     myLibrary.push(book);
@@ -23,7 +28,6 @@ function addBookToLibrary() {
 }
 
 function displayNewBook(){
-
     let grid = document.querySelector('.grid');
 
     let card = document.createElement('div');
@@ -67,4 +71,10 @@ function logSubmit(event){
 const form = document.getElementById('form');
 form.addEventListener("submit", logSubmit);
 form.addEventListener("submit", addBookToLibrary);
+form.addEventListener("submit", () => {
+    document.getElementById('book-name').value = '';
+    document.getElementById('author').value = '';
+    document.getElementById('book-pages').value = '';
+    document.getElementById('been-read').checked = false;
+});
 
