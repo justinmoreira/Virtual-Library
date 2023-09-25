@@ -43,11 +43,21 @@ function displayNewBook(){
     card.appendChild(cardAuthor);
 
     let cardPages = document.createElement('div');
-    cardPages.textContent = myLibrary[currentIndex].pages;
+    cardPages.textContent = myLibrary[currentIndex].pages + ' pages';
     card.appendChild(cardPages);
 
-    let cardRead = document.createElement('div');
+    let cardRead = document.createElement('button');
+    cardRead.className = 'delete-input';
     cardRead.textContent = myLibrary[currentIndex].read;
+    if(cardRead.textContent == 'Been read') {
+        cardRead.style.background = 'green';
+    }
+    cardRead.addEventListener('click', () => {
+        if(cardRead.style.background = 'red'){
+            cardRead.textContent = "Been read";
+            cardRead.style.background = 'green';
+        }
+    });
     card.appendChild(cardRead);
 
     let deleteButton = document.createElement('button');
