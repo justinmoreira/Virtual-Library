@@ -49,19 +49,16 @@ function displayNewBook(){
     let deleteButton = document.createElement('button');
     deleteButton.className = 'delete-input';
     deleteButton.textContent = 'Delete';
+    deleteButton.addEventListener('click', deleteOldBook);
     card.appendChild(deleteButton);
     
     currentIndex++;
 }
 
-function createNewCard(name, author, pages, read){
-    
-
-    
-
-    
-
-    
+function deleteOldBook() {
+    let parent = this.parentNode;
+    parent.remove();
+    currentIndex--;
 }
 
 function logSubmit(event){
