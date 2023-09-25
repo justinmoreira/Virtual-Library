@@ -58,7 +58,6 @@ function displayNewBook(){
 function deleteOldBook() {
     let parent = this.parentNode;
     parent.remove();
-    currentIndex--;
 }
 
 function logSubmit(event){
